@@ -43,7 +43,7 @@ class ForwardToList extends SearchableList {
       isSelected={false}
       isVerified={chatListItem.isVerified}
       isGroup={chatListItem.isGroup}
-      unreadCount={null}
+      freshMessageCounter={null}
     />
   }
 }

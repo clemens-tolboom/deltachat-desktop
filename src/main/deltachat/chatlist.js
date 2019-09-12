@@ -47,7 +47,11 @@ function chatModified (chatId) {
     if (id === chatId) i = counter
   }
   if (i === -1) return
-  const chat = this.getChatById(chatId, list, i)
+  let chat = this.getChatById(chatId, list, i)
+  if (this._selectedChatId === chatId) {
+    // selected chat needs more updated properties as listed chat
+    chat = this._getChatById(chatId)
+  }
   this.sendToRenderer('DD_EVENT_CHAT_MODIFIED', { chatId, chat })
 }
 
